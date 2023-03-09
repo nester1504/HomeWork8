@@ -77,7 +77,7 @@ void ArrangeRows(int[,] matr)
         {
             for (int j = m + 1; j < sizeCols; j++)
             {
-                if (matr[i,m] > matr[i,j])
+                if (matr[i,m] < matr[i,j])
                 {
                     temp = matr[i, m];
                     matr[i,m] = matr[i,j];
