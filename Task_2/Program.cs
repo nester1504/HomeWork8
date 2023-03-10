@@ -81,7 +81,7 @@ int SumOfLineElements(int[,] matr)
         {
             minSum = minSum + matr[i, m];
         }
-        Console.WriteLine(minSum);
+        Console.WriteLine($"Сумма строки - {i+1} = {minSum}");
         if (minSum < minSum2)
         {
             minSum2 = minSum;           
@@ -93,10 +93,31 @@ int SumOfLineElements(int[,] matr)
     return count;
 }
 
+/// <summary>
+/// Медот проверки на не равенства длины строки м столбца
+/// </summary>
+/// <param name="rows">Количество строк</param>
+/// <param name="cols">Количество столбцов</param>
+void CheckForRectangle(int rows, int cols)
+{
+    
+    if (rows == cols)
+    {
+        Console.WriteLine("Массив должен быть прямоугольным, запустите программу заново");
+        Environment.Exit(0);
+    }
+    else
+    {
+    }
+}
+
 Console.WriteLine("Введите количество строк массива");
 int rows = ReadNumber();
 Console.WriteLine("Введите количество столбцов массива");
 int cols = ReadNumber();
+
+CheckForRectangle(rows, cols);
+
 int[,] matrix = GetMatrix(rows, cols);
 PrintMatrix(matrix);
 int minRows = SumOfLineElements(matrix);
